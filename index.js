@@ -1,11 +1,12 @@
 // TODO: Include packages needed for this application
 import inquirer from "inquirer";
 import fs from 'fs';
+import generateMarkdown from "./utils/generateMarkdown";
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
-        name: 'projectName',
+        name: 'title',
         message: 'What is the name of your project?',
     },
     {
@@ -32,6 +33,11 @@ const questions = [
         type: 'input',
         name: 'tests',
         message: 'How can users test your project?'
+    },
+    {
+        type: 'input',
+        name: 'license',
+        message: 'What license does your project use?'
     }
 ];
 
@@ -45,6 +51,7 @@ function writeToFile(fileName, data) {
         }
     });
 }
+
 
 // TODO: Create a function to initialize app
 function init() {}
