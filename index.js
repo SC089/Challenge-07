@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 import inquirer from "inquirer";
 import fs from 'fs';
-import generateMarkdown from "./utils/generateMarkdown";
+import generateMarkdown from "./utils/generateMarkdown.js";
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -21,7 +22,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'Usage',
+        name: 'usage',
         message: 'How do you use this project?'
     },
     {
@@ -54,7 +55,12 @@ function writeToFile(fileName, data) {
 
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        const readmeContent = generateMarkdown(answers);
+        writeToFile('README.md', readmeContent);
+    });
+}
 
 // Function call to initialize app
 init();
