@@ -3,7 +3,9 @@
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
   ## Description
+  ```
   This application will ask the user some questions, the user will answer those questions, and then the application will take those answers and generate an entire readme file.
+  ```
 
   ## Installation
   ```
@@ -18,6 +20,7 @@
   ## Contribution
   ```
   You can add the option to go back to a previous question, better format the generated readme file, or add the option to skip a question.
+  ```
 
   ## Tests
   ```
@@ -25,7 +28,12 @@
   ```
 
   ## License
+  ```
   This project is license under the MIT license.
+  ```
 
   ## License Link
+  
+  ```
   - [License](#license)
+  ```
