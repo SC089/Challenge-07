@@ -15,6 +15,7 @@ class Motorbike extends Vehicle {
   weight: number;
   topSpeed: number;
   wheels: Wheel[];
+  isDoingWheelie: boolean;
   // TODO: Create a constructor that accepts the properties of the Motorbike class
     // TODO: The constructor should call the constructor of the parent class, Vehicle
     // TODO: The constructor should initialize the properties of the Motorbike class
@@ -38,6 +39,7 @@ class Motorbike extends Vehicle {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
+    this,this.isDoingWheelie = false;
 
     if (wheels.length !== 2) {
       this.wheels = [new Wheel(), new Wheel()];
@@ -46,7 +48,24 @@ class Motorbike extends Vehicle {
     }
   }
   // TODO: Implement the wheelie method
-    // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
+  // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
+  doWheelie(): void {
+    if (!this.isDoingWheelie) {
+      this.isDoingWheelie = true;
+      console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`)
+    } else {
+      console.log(`Motorbike ${this.make} ${this.model} is already doing a wheelie!`)
+    }
+  }
+
+  stopWheelie(): void {
+    if (this.isDoingWheelie) {
+      this.isDoingWheelie = false;
+      console.log(`Motorbike ${this.make} ${this.model} has stopped doing a wheelie.`)
+    } else {
+      console.log(`Motorbike ${this.make} ${this.model} is not doing a wheelie.`)
+    }
+  }
 
   // TODO: Override the printDetails method from the Vehicle class
   // TODO: The method should call the printDetails method of the parent class
